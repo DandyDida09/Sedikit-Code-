@@ -1,0 +1,130 @@
+### HTML & CSS in Visual Studio:
+
+#### 1. **HTML:**
+   - **Cara Pakai:**
+     - Buat file baru dengan ekstensi `.html`.
+     - Tulis struktur HTML, seperti `<html>`, `<head>`, `<body>`.
+   - **Contoh:**
+     ```html
+     <!DOCTYPE html>
+     <html>
+     <head>
+         <title>Contoh HTML</title>
+     </head>
+     <body>
+         <h1>Selamat datang!</h1>
+     </body>
+     </html>
+     ```
+
+#### 2. **CSS:**
+   - **Cara Pakai:**
+     - Buat file terpisah dengan ekstensi `.css`.
+     - Hubungkan dengan HTML menggunakan tag `<link>` di bagian `<head>`.
+   - **Contoh:**
+     ```css
+     /* style.css */
+     h1 {
+         color: blue;
+     }
+     ```
+     ```html
+     <!DOCTYPE html>
+     <html>
+     <head>
+         <title>Contoh HTML dengan CSS</title>
+         <link rel="stylesheet" type="text/css" href="style.css">
+     </head>
+     <body>
+         <h1>Selamat datang!</h1>
+     </body>
+     </html>
+     ```
+
+### Flask in Visual Studio:
+
+#### 1. **Install Flask:**
+   - Buka terminal di Visual Studio dan jalankan:
+     ```bash
+     pip install flask
+     ```
+
+#### 2. **Membuat Aplikasi Flask:**
+   - **Cara Pakai:**
+     - Buat file Python (misalnya `app.py`) dan tulis:
+       ```python
+       from flask import Flask, render_template
+
+       app = Flask(__name__)
+
+       @app.route('/')
+       def home():
+           return render_template('index.html')
+
+       if __name__ == '__main__':
+           app.run(debug=True)
+       ```
+   - **Contoh:**
+     - Buat file `templates/index.html`:
+       ```html
+       <!DOCTYPE html>
+       <html>
+       <head>
+           <title>Halaman Utama</title>
+       </head>
+       <body>
+           <h1>Selamat datang di aplikasi Flask!</h1>
+       </body>
+       </html>
+       ```
+
+### SQL in Visual Studio:
+
+#### 1. **Menggunakan SQLite:**
+   - **Cara Pakai:**
+     - Install SQLite melalui terminal:
+       ```bash
+       pip install sqlite
+       ```
+   - **Contoh:**
+     ```python
+     import sqlite3
+
+     conn = sqlite3.connect('database.db')
+     cursor = conn.cursor()
+
+     # Membuat tabel
+     cursor.execute('''
+         CREATE TABLE IF NOT EXISTS users (
+             id INTEGER PRIMARY KEY,
+             username TEXT NOT NULL,
+             email TEXT NOT NULL
+         )
+     ''')
+
+     # Menambahkan data
+     cursor.execute("INSERT INTO users (username, email) VALUES (?, ?)", ('user1', 'user1@example.com'))
+
+     # Melihat data
+     cursor.execute('SELECT * FROM users')
+     print(cursor.fetchall())
+
+     conn.commit()
+     conn.close()
+     ```
+
+### Python in Visual Studio:
+
+#### 1. **Membuat Script Python:**
+   - **Cara Pakai:**
+     - Buat file Python (misalnya `script.py`) dan tulis kode Python di dalamnya.
+   - **Contoh:**
+     ```python
+     def tambah(a, b):
+         return a + b
+
+     hasil = tambah(3, 4)
+     print(hasil)
+     ```
+
+Semua contoh di atas dapat dijalankan menggunakan Visual Studio
